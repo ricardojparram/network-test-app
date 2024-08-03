@@ -2,11 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .grandient-bg{
+    @apply bg-size-200 bg-pos-0 bg-gradient-to-r from-green-400 to-blue-500;
+  }
+  .text-color-bg{
+    @apply inline-block text-transparent bg-clip-text;
+  }
+
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color-scheme: light;
+  color-scheme: dark light;
 }
 
 #app{
