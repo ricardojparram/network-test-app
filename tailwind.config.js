@@ -1,24 +1,52 @@
+import { transform } from "typescript";
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: "selector",
   theme: {
     extend: {
+      dropShadow: {
+        "yellow-lg": "-5px -10px 15px rgba(255, 238, 0, 0.767)",
+        "yellow-xl": "-5px -10px 17px rgba(255, 238, 0, 0.952)",
+        "blue-lg": "0 0 15px rgba(0, 50, 189, 0.74)",
+        "blue-xl": "0 0 18px rgba(0, 56, 209, 0.918)",
+      },
+      colors: {
+        dark: "#1c1b22",
+        light: "#f7f7f7",
+      },
+      backgroundSize: {
+        "size-200": "200% 200%",
+      },
+      backgroundPosition: {
+        "pos-0": "40% 0%",
+        "pos-80": "80% 80%",
+        "pos-100": "100% 100%",
+      },
       animation: {
-        "pulse-fade-in": "pulse-fade-in 0.6s ease-out",
+        "blurred-fade-in": "blurred-fade-in 1s ease-in-out forward",
+        "blurred-fade-out": "blurred-fade-out 1s ease-in-out forward",
       },
       keyframes: {
-        "pulse-fade-in": {
+        "blurred-fade-in": {
           "0%": {
-            transform: "scale(0.9)",
+            filter: "blur(5px)",
             opacity: "0",
           },
-          "50%": {
-            transform: "scale(1.05)",
-            opacity: "0.5",
+          "100%": {
+            filter: "blur(0)",
+            opacity: "1",
+          },
+        },
+        "blurred-fade-out": {
+          "0%": {
+            filter: "blur(0)",
+            opacity: "1",
           },
           "100%": {
-            transform: "scale(1)",
-            opacity: "1",
+            filter: "blur(5px)",
+            opacity: "0",
           },
         },
       },
