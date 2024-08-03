@@ -19,7 +19,7 @@ const sizes = {
 export function GradientTypography({ children, size = "6xl", hover }: Props) {
   return (
     <h1
-      class={`bg-gradient-to-r from-green-400 to-blue-500 inline-block text-transparent bg-clip-text font-extrabold ${sizes[size]} text-center ${hover}`}
+      class={`transition-colors duration-300 grandient-bg text-color-bg font-extrabold ${sizes[size]} text-center ${hover}`}
     >
       {children}
     </h1>
