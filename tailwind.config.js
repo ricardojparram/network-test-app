@@ -11,6 +11,7 @@ export default {
         "yellow-xl": "-5px -10px 17px rgba(255, 238, 0, 0.952)",
         "blue-lg": "0 0 15px rgba(0, 50, 189, 0.74)",
         "blue-xl": "0 0 18px rgba(0, 56, 209, 0.918)",
+        "orange-lg": "-35px 25px 30px rgba(230, 149, 0, 0.5)",
       },
       colors: {
         dark: "#1c1b22",
@@ -25,8 +26,8 @@ export default {
         "pos-100": "100% 100%",
       },
       animation: {
-        "blurred-fade-in": "blurred-fade-in 1s ease-in-out forward",
-        "blurred-fade-out": "blurred-fade-out 1s ease-in-out forward",
+        "blurred-fade-in": "blurred-fade-in 0.3s ease-in-out forwards",
+        "blurred-fade-out": "blurred-fade-out 0.3s ease-in-out forwards",
       },
       keyframes: {
         "blurred-fade-in": {
