@@ -1,8 +1,9 @@
 import { JSX } from "preact/jsx-runtime";
+import { type sizes } from "../types/sizes";
 
 type Props = {
   children: string | JSX.Element | JSX.Element[];
-  size?: keyof typeof sizes;
+  size?: sizes;
   hover?: string;
 };
 const sizes = {
@@ -19,7 +20,7 @@ const sizes = {
 export function GradientTypography({ children, size = "6xl", hover }: Props) {
   return (
     <h1
-      class={`transition-colors duration-300 grandient-bg text-color-bg font-extrabold ${sizes[size]} text-center ${hover}`}
+      class={`transition-colors duration-300 gradient-bg text-color-bg font-extrabold ${sizes[size]} text-center ${hover}`}
     >
       {children}
     </h1>
