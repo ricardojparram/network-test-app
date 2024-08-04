@@ -26,7 +26,6 @@ export function Test() {
     let startTime: Date = new Date();
     let currentTime: Date, timeElapsed: number;
     while (true) {
-      console.log(reader?.read());
       const { done, value } = await reader?.read();
       receivedLength += value?.length ?? 0;
       currentTime = new Date();
