@@ -22,7 +22,6 @@ export function UserInfo() {
       const req = await fetch(url);
       const res: userInfo = await req.json();
       setLoading(false);
-      console.log(res);
       setData(res);
     };
     getInfo();
