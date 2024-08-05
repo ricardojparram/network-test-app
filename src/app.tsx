@@ -1,4 +1,3 @@
-import { Suspense, lazy } from "preact/compat";
 import { GradientTypography } from "./components/GradientTypography";
 import { FxemojiRocket } from "./components/icons/rocket";
 import { Test } from "./components/Test";
