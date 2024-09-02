@@ -1,0 +1,10 @@
+---
+import Layout from "../layouts/Layout.astro";
+import UserInfo from "../components/UserInfo.astro";
+import { Test } from "../components/Test";
+---
+
+<Layout title="NETEST - Speed test for your Internet">
+  <UserInfo />
+  <Test client:load />
+</Layout>

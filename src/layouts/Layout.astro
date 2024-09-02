@@ -1,0 +1,106 @@
+---
+import ThemeSwitch from "../components/ThemeSwitch.astro";
+import Rocket from "../components/icons/Rocket.astro";
+import GradientTypography from "../components/GradientTypography.astro";
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <div
+      class="absolute z-[-1] h-full w-full bg-[radial-gradient(#c1c4c9_1px,transparent_1px)] [background-size:30px_30px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] dark:bg-[radial-gradient(#454545_1px,transparent_1px)]"
+    >
+    </div>
+    <div
+      class="absolute top-0 z-[-2] h-screen w-screen bg-light dark:bg-dark bg-[radial-gradient(90%_50%_at_50%_5%,rgba(0,163,255,0.13)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)]"
+    >
+    </div>
+    <div class="absolute top-0 right-5">
+      <ThemeSwitch />
+    </div>
+    <header class="pt-[12vh] px-6 flex items-center justify-center flex-col">
+      <GradientTypography size="7xl">
+        <span class="flex tracking-wider">
+          NETEST
+          <Rocket
+            class="ml-5 [filter:drop-shadow(-35px_25px_30px_rgba(230,149,0,0.5))]"
+          />
+        </span>
+      </GradientTypography>
+      <h2
+        class="font-semibold text-lg md:text-xl text-slate-700 dark:text-slate-200 pt-5 text-center"
+      >
+        Test the <strong>connection's speed</strong> of your{" "}
+        <strong>network</strong>.
+      </h2>
+    </header>
+    <main
+      class="grow w-full mx-auto mt-[10vh] md:mt-[5vh] flex flex-col items-center justify-start gap-12"
+    >
+      <slot />
+    </main>
+  </body>
+</html>
+
+<style is:global>
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+  @layer components {
+    .gradient-bg {
+      @apply bg-size-200 bg-pos-0 bg-gradient-to-r from-green-400 to-blue-500;
+    }
+    .text-color-bg {
+      @apply inline-block text-transparent bg-clip-text;
+    }
+  }
+
+  :root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color-scheme: dark light;
+  }
+
+  #app {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* HTML: <div class="loader"></div> */
+  .loader {
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background:
+      radial-gradient(farthest-side, #ffa516 94%, #0000) top/8px 8px no-repeat,
+      conic-gradient(#0000 30%, #ffa516);
+    -webkit-mask: radial-gradient(
+      farthest-side,
+      #0000 calc(100% - 8px),
+      #000 0
+    );
+    animation: l13 1s infinite linear;
+  }
+
+  @keyframes l13 {
+    100% {
+      transform: rotate(1turn);
+    }
+  }
+</style>
