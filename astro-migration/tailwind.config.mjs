@@ -4,13 +4,6 @@ export default {
   darkMode: "selector",
   theme: {
     extend: {
-      dropShadow: {
-        "yellow-lg": "-5px -10px 15px rgba(255, 238, 0, 0.767)",
-        "yellow-xl": "-5px -10px 17px rgba(255, 238, 0, 0.952)",
-        "blue-lg": "0 0 15px rgba(0, 50, 189, 0.74)",
-        "blue-xl": "0 0 18px rgba(0, 56, 209, 0.918)",
-        "orange-lg": "-35px 25px 30px rgba(230, 149, 0, 0.5)",
-      },
       colors: {
         dark: "#1c1b22",
         light: "#f7f7f7",
